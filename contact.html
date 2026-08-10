@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — The Impact Engine / Agro</title>
+<meta name="description" content="Tell us about your brand and your category, or book a call directly with The Impact Engine's agro practice lead.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Bitter:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" aria-label="The Impact Engine home">
+    <img class="nav__logo" src="assets/logo-black-transparent.png" alt="The Impact Engine logo">
+  </a>
+  <div class="nav__links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html" class="is-active">Contact</a>
+    <a href="https://calendly.com/theimpactengine" target="_blank" rel="noopener" class="btn btn--primary btn--sm">Book a Call</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow" style="margin-bottom:20px">Get in touch</span>
+    <h1 class="h1 hero__title--sub">Let's build something the fields remember.</h1>
+    <p class="lead">Tell us about your brand and your category, or book a call directly with our agro practice lead.</p>
+  </div>
+</section>
+
+<div class="band band--16x5">
+  <video autoplay muted loop playsinline>
+    <source src="https://videos.pexels.com/video-files/10776622/10776622-hd_2560_1440_30fps.mp4" type="video/mp4">
+  </video>
+</div>
+
+<section class="section" style="border-bottom:none">
+  <div class="wrap contact-grid">
+    <form class="form" id="contact-form" novalidate>
+      <div class="form__row">
+        <div class="field"><label for="c-name">Full name</label><input class="input" id="c-name" name="name" type="text" placeholder="Your name" required></div>
+        <div class="field"><label for="c-company">Company</label><input class="input" id="c-company" name="company" type="text" placeholder="Company name"></div>
+      </div>
+      <div class="form__row">
+        <div class="field"><label for="c-email">Email</label><input class="input" id="c-email" name="email" type="email" placeholder="you@company.com" required></div>
+        <div class="field"><label for="c-phone">Phone</label><input class="input" id="c-phone" name="phone" type="tel" placeholder="+91"></div>
+      </div>
+      <div class="field">
+        <label for="c-sector">I work in</label>
+        <select class="input" id="c-sector" name="sector">
+          <option>Agri-input company</option>
+          <option>Agritech / farm-tech startup</option>
+          <option>FPO / farmer collective</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field"><label for="c-message">Tell us about your brand</label><textarea class="input" id="c-message" name="message" rows="5" placeholder="What are you trying to grow, and where are you stuck?"></textarea></div>
+      <button type="submit" class="form__submit">Send message</button>
+      <p class="form__status" id="form-status" role="status" hidden></p>
+    </form>
+    <div class="contact-aside">
+      <div class="info">
+        <div class="info__label">Prefer a conversation</div>
+        <div class="info__title">Book a Call</div>
+        <p>Skip the form and get 30 minutes with our agro practice lead.</p>
+        <a class="inline" href="https://calendly.com/theimpactengine" target="_blank" rel="noopener">Open Calendly</a>
+      </div>
+      <div class="info">
+        <div class="info__label">Email</div>
+        <div class="info__title">agro@theimpactengine.in</div>
+        <p>For briefs, partnership enquiries and press.</p>
+      </div>
+      <div class="info">
+        <div class="info__label">Studio</div>
+        <div class="info__title">Pune, Maharashtra</div>
+        <p>301, Third Floor, Origin Workspaces, Silver Oak Park, Aundh, Pune – 411007.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__grid">
+    <div>
+      <div class="footer__brand">The Impact Engine / Agro</div>
+      <p>Communication for the businesses growing India's agri economy.</p>
+    </div>
+    <div>
+      <div class="footer__head">Company</div>
+      <div class="footer__links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer__head">Get in touch</div>
+      <div class="footer__links">
+        <a href="mailto:agro@theimpactengine.in">agro@theimpactengine.in</a>
+        <span>Pune, Maharashtra</span>
+      </div>
+    </div>
+  </div>
+  <p class="footer__legal">© 2026 The Impact Engine. All rights reserved.</p>
+</footer>
+
+<script>
+  // No backend yet: compose a mailto so the form still delivers the enquiry.
+  (function () {
+    var form = document.getElementById('contact-form');
+    var status = document.getElementById('form-status');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      var d = new FormData(form);
+      var subject = 'Agro enquiry — ' + (d.get('name') || '') + (d.get('company') ? ' (' + d.get('company') + ')' : '');
+      var body =
+        'Name: ' + (d.get('name') || '') + '\n' +
+        'Company: ' + (d.get('company') || '') + '\n' +
+        'Email: ' + (d.get('email') || '') + '\n' +
+        'Phone: ' + (d.get('phone') || '') + '\n' +
+        'Sector: ' + (d.get('sector') || '') + '\n\n' +
+        (d.get('message') || '');
+      window.location.href = 'mailto:agro@theimpactengine.in'
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body=' + encodeURIComponent(body);
+      status.hidden = false;
+      status.textContent = 'Opening your email app to send. If nothing happens, write to agro@theimpactengine.in directly.';
+    });
+  })();
+</script>
+
+</body>
+</html>

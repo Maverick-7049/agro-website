@@ -1,0 +1,7 @@
+# Build artifact — not needed for Git deploy (Hostinger clones the source files directly)
+agro-website.zip
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
