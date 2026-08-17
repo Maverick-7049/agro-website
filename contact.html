@@ -3,7 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact — The Impact Engine / Agro</title>
+<title>Contact | The Impact Engine Agro</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="256x256" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta name="description" content="Tell us about your brand and your category, or book a call directly with The Impact Engine's agro practice lead.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,7 +81,7 @@
       <div class="info">
         <div class="info__label">Studio</div>
         <div class="info__title">Pune, Maharashtra</div>
-        <p>301, Third Floor, Origin Workspaces, Silver Oak Park, Aundh, Pune – 411007.</p>
+        <p>301, Third Floor, Origin Workspaces, Silver Oak Park, Aundh, Pune 411007.</p>
       </div>
     </div>
   </div>
@@ -87,7 +90,7 @@
 <footer class="footer">
   <div class="footer__grid">
     <div>
-      <div class="footer__brand">The Impact Engine / Agro</div>
+      <div class="footer__brand">The Impact Engine Agro</div>
       <p>Communication for the businesses growing India's agri economy.</p>
     </div>
     <div>
@@ -119,7 +122,7 @@
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
       var d = new FormData(form);
-      var subject = 'Agro enquiry — ' + (d.get('name') || '') + (d.get('company') ? ' (' + d.get('company') + ')' : '');
+      var subject = 'Agro enquiry from ' + (d.get('name') || '') + (d.get('company') ? ' (' + d.get('company') + ')' : '');
       var body =
         'Name: ' + (d.get('name') || '') + '\n' +
         'Company: ' + (d.get('company') || '') + '\n' +
